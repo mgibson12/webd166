@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Form</title>
+</head>
+<style>
+    /* Apply border-box sizing to all elements. */
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 18px 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #222;
+        background-color: #666;
+    }
+
+    header {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        margin: 0;
+        color: navy;
+        font-size: 1.8rem;
+    }
+
+    /* White form container */
+    main {
+        width: 66%;
+        max-width: 650px;
+        min-width: 500px;
+        margin: 0 auto;
+        padding: 14px 14px 18px;
+        background-color: white;
+        border: 1px solid #444;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    }
+
+    form {
+        margin: 0;
+    }
+
+    fieldset {
+        margin: 0 0 20px;
+        padding: 10px 15px 12px;
+        border: 2px solid #bbb;
+    }
+
+    legend {
+        padding: 0 5px;
+        color: #555;
+        font-size: 0.9rem;
+    }
+
+    /* Align labels and form controls into two columns. */
+    .form-row {
+        display: grid;
+        grid-template-columns: 105px 160px;
+        align-items: center;
+        column-gap: 10px;
+        margin: 4px 0;
+    }
+
+    .form-row label {
+        font-weight: bold;
+        text-align: right;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        width: 160px;
+        height: 24px;
+        padding: 3px 5px;
+        font: inherit;
+        border: 1px solid #aaa;
+        background-color: white;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    .checkbox-row {
+        align-items: start;
+    }
+
+    .checkbox-row label {
+        line-height: 1.05;
+    }
+
+    input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+        margin: 2px 0 0;
+    }
+
+    /* Place the buttons vertically. */
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    button {
+        width: 62px;
+        height: 25px;
+        padding: 2px 6px;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    /* Allow the form to fit on smaller screens. */
+    @media (max-width: 650px) {
+        main {
+            width: 100%;
+            min-width: 0;
+        }
+
+        .form-row {
+            grid-template-columns: 110px 1fr;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            max-width: 200px;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Account Sign Up</h1>
+    </header>
+    <main>
+        <section>
+
+            <form action="process.php" method="get">
+                <fieldset>
+                    <legend>Your Information</legend>
+
+                    <p>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" maxlength="50">
+                    </p>
+
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" maxlength="50">
+                    </p>
+
+                    <p>
+                        <label for="news">
+                            <input type="checkbox" id="news" name="news" value="yes">
+                            Receive the newsletter
+                        </label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Submit</button>
+                </p>
+                <p> <button type="reset">Reset</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+</body>
+
+</html>
